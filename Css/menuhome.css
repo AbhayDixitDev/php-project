@@ -1,0 +1,92 @@
+.container
+{
+ width:100%;
+ margin-left:2%;
+}
+#menu{
+	display:block;
+	float:left;
+	margin:0;
+	padding:0;
+	font-size:18px;
+	font-weight:normal;
+	font-family:Georgia, "Times New Roman", Times, serif;
+                   text-align:center;
+	}
+
+#menu ul, #menu li{
+               
+	float:left;
+	list-style:none;
+	margin:0;
+	padding:0;
+            }
+
+#menu li a:link, #menu li a:visited, #menu li a:hover{
+	display:block;
+	margin:0;
+	padding:15px 10px;
+	color:#FFFFFF;
+	background-color:#562051;
+	border-left:2px solid #562051;
+                    border-right:2px solid #ee2051;
+                    width:100px auto;
+                    text-align:center;
+	}
+
+#menu ul ul li a:link, #menu ul ul li a:visited{
+	border:none;
+	}
+
+#menu li a:hover, #menu ul li.active a{
+	color:#FFFFFF;
+	background-color:#A5066D;
+	border-left:2px solid #F955BF;
+	}
+	
+#menu li li a:link, #menu li li a:visited{
+	width:150px;
+	float:none;
+	margin:0;
+	padding:7px 10px;
+	font-size:16px;
+	font-weight:normal;
+	color:#FFFFFF;
+	background-color:#3c5899;
+	}
+	
+#menu li li a:hover{
+	color:#FFFFFF;
+	background-color:#A5066D;
+	}
+
+#menu li ul{
+	z-index:9999;
+	position:absolute;
+	left:-999em;
+	height:auto;
+	width:170px;
+	border-left:2px solid #F955BF;
+	border-bottom:2px solid #F955BF;
+	}
+
+#menu li ul a
+{
+  width:140px;
+}
+
+#menu li ul ul
+{
+  margin:-32px 0 0 0;
+}
+
+#menu li:hover ul ul
+{
+  left:-999em;
+}
+
+#menu li:hover ul, #menu li li:hover ul
+{
+  left:auto;
+}
+
