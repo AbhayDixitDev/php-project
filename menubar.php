@@ -7,107 +7,80 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        .navbar-nav > li {
-            position: relative;
-            padding: 15px;
+        .navbar-nav>div {
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 150px;
         }
-        .dropdown-menu {
-            position: absolute;
-            display: none;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1000;
-        }
-        .nav-item:hover .dropdown-menu {
-            display: block;
+        .bold {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-default" >
+    <nav class="navbar " >
         <div class="container-fluid">
-            <div class="navbar-header" >
-                <a class="navbar-brand" href="#">Voting System</a>
+            <div class="navbar-nav" style="display: flex !important;flex-direction: row">
+                <div class="nav-item active bold" style="background-color: white;text-align: center;align-content: center;color: black"><a href="index.php" style="color: black;text-decoration: none">Home</a></div>
+                <div class="nav-item dropdown bold" style="margin-left: 10px;margin-right: 10px">
+                    <select class="form-control" onchange="if (this.value) window.location.href=this.value;">
+                        <option value="" style="background-color: white;text-align: center;align-content: center;font-weight: bold;"><h1>Admin</h1></option>
+                        <option value="votersearchnm.php">Voter Search By Name</option>
+                        <option value="votersearchaadh.php">Voter Search By Aadhar Number</option>
+                        <option value="votersearchid.php">Voter Search By Voter Id</option>
+                        <option value="votersearchmob.php">Voter Search By Mobile No.</option>
+                        <option value="votersearchemail.php">Voter Search By Email ID</option>
+                        <option value="#">Voter Search By Address</option>
+                        <option value="voterentry.php">Register</option>
+                        <option value="voterupdate.php">Update</option>
+                        <option value="voterdelete.php">Delete</option>
+                    </select>
+                </div>
+                <div class="nav-item dropdown bold" style="margin-left: 10px;margin-right: 10px;">
+                    <select class="form-control" onchange="if (this.value) window.location.href=this.value;">
+                        <option value="">Candidate</option>
+                        <option value="candsearchnm.php">Candidate Search By Name</option>
+                        <option value="candsearchid.php">Candidate Search By Candidate ID</option>
+                        <option value="candsearchmob.php">Candidate Search By Candidate Mobile</option>
+                        <option value="candsearchadd.php">Candidate Search By Address</option>
+                        <option value="candsearchemail.php">Candidate Search By Email</option>
+                        <option value="candidateentry.php">Register</option>
+                        <option value="candupdate.php">Update</option>
+                        <option value="canddelete.php">Delete</option>
+                    </select>
+                </div>
+                <div class="nav-item dropdown bold" style="margin-left: 10px;margin-right: 10px;">
+                    <select class="form-control" onchange="if (this.value) window.location.href=this.value;">
+                        <option value="">Login</option>
+                        <option value="voterlogin.php">Voter Login</option>
+                        <option value="Candidatelogin.php">Candidate Login</option>
+                    </select>
+                </div>
+                <div class="nav-item dropdown pull-right bold" style="margin-left: 10px;margin-right: 10px;">
+                    <select class="form-control" onchange="if (this.value) window.location.href=this.value;">
+                        <option value="">Voter Search</option>
+                        <option value="votersearch.php">--By Name</option>
+                        <option value="votersearchaadh.php">--By Aadhar Number</option>
+                        <option value="votersearchid.php">--By Voter ID</option>
+                        <option value="votersearchmob.php">--By Mobile No.</option>
+                        <option value="votersearchemail.php">--By Email ID</option>
+                    </select>
+                </div>
+                <div class="nav-item dropdown pull-right bold" style="margin-left: 10px;margin-right: 10px;">
+                    <select class="form-control" onchange="if (this.value) window.location.href=this.value;">
+                        <option value="">Candidate Search</option>
+                        <option value="candsearchnm.php">--By Name</option>
+                        <option value="candsearchid.php">--By Candidate ID</option>
+                        <option value="candsearchmob.php">--By Mobile</option>
+                        <option value="candsearchadd.php">--By Address</option>
+                        <option value="candsearchemail.php">--By Email</option>
+                    </select>
+                </div>
+                <div class="nav-item bold" style="background-color: white;text-align: center;align-content: center;"><a href="Aboutus.php" style="color: black;text-decoration: none">About Us</a></div>
+                <div class="nav-item"><?php include 'loginbtn.php'; ?></div>
+                
+                
             </div>
-            <ul class="nav navbar-nav" style="display: flex; flex-direction: row;justify-content: space-between,align-items: center">
-                <li class="active"><a href="index.php">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Voter</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="votersearchnm.php">By Voter Name</a></li>
-                                <li><a href="votersearchaadh.php">By Aadhar Number</a></li>
-                                <li><a href="votersearchid.php">By Voter Id</a></li>
-                                <li><a href="votersearchmob.php">By Mobile No.</a></li>
-                                <li><a href="votersearchemail.php">By Email ID</a></li>
-                                <li><a href="#">By Address</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="voterentry.php">Register</a></li>
-                        <li><a href="voterupdate.php">Update</a></li>
-                        <li><a href="voterdelete.php">Delete</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Candidate <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Search</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="candsearchnm.php">By Candidate Name</a></li>
-                                <li><a href="candsearchid.php">By Candidate ID</a></li>
-                                <li><a href="candsearchmob.php">By Candidate Mobile</a></li>
-                                <li><a href="candsearchadd.php">By Address</a></li>
-                                <li><a href="candsearchemail.php">By Email</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="candidateentry.php">Register</a></li>
-                        <li><a href="candupdate.php">Update</a></li>
-                        <li><a href="canddelete.php">Delete</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="voterlogin.php">Voter Login</a></li>
-                        <li><a href="Candidatelogin.php">Candidate Login</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Voter</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="votersearch.php">Search</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="votersearchnm.php">By Voter Name</a></li>
-                                        <li><a href="votersearchaadh.php">By Aadhar Number</a></li>
-                                        <li><a href="votersearchid.php">By Voter Id</a></li>
-                                        <li><a href="votersearchmob.php">By Mobile No.</a></li>
-                                        <li><a href="votersearchemail.php">By Email ID</a></li>
-                                        <li><a href="#">By Address</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Candidate</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Search</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="candsearchnm.php">By Candidate Name</a></li>
-                                        <li><a href="candsearchid.php">By Candidate ID</a></li>
-                                        <li><a href="candsearchmob.php">By Candidate Mobile</a></li>
-                                        <li><a href="candsearchadd.php">By Address</a></li>
-                                        <li><a href="candsearchemail.php">By Email</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="Aboutus.php">About Us</a></li>
-               <li> <?php include 'loginbtn.php'; ?></li>
-            </ul>
         </div>
     </nav>
 </body>

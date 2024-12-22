@@ -3,9 +3,7 @@
 
  <table >
         <tr >
-            <td width="20%" >
-                <img src="images/20171213_115805437.jpg" width="100%" />
-            </td>
+          
         <td width="60%">
         <?php
                    $vi="";

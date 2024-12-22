@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <style>
-        .justify-content-end {
-            display: flex;
-            justify-content: flex-end;
-        }
-    </style>
 </head>
 <body>
-    <div class="justify-content-end" >
-        <div class="p-4">
+    <div style="display:flex;">
+        <div class="nav-item" >
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Admin Login
             </button>
         </div>
-        <?php include 'searchbox.php'; ?>
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <style>
+        .modal-backdrop {
+            /* backdrop-filter: blur(2px); */
+        }
+        .modal-dialog {
+            position: absolute;
+            top: 20%;
+            right: 5%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            z-index: 9999;
+        }
+    </style>
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -33,7 +39,7 @@
                 <div class="modal-body">
                     <form action="index.php" method="post">
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
@@ -46,8 +52,6 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uQbjeZj/4tMI4dnQqcqo5g7ZS7YmXN1x8mT/2Jy4u/4JU6hO+WV6k=" crossorigin="anonymous"></script>
     <?php
     if(isset($_POST['login']))
     {
